@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Member Details | MHPS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .header {
+      background-color: #004080;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    .member-card {
+      max-width: 600px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin: auto;
+    }
+    .member-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 20px;
+      border: 5px solid #004080;
+    }
+    .info-icon {
+      color: #004080;
+      width: 24px;
+    }
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .info-item span {
+      margin-left: 10px;
+      font-weight: 500;
+    }
+    .description {
+      margin-top: 20px;
+    }
+    .map-embed {
+      margin-top: 30px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    MHPS Member Profile
+  </div>
+
+  <div class="member-card text-center" id="member-card">
+    <!-- JS will populate this -->
+  </div>
+
+  <script>
+    const members = {
+      "giri": {
+        name: "Giri Gowda V",
+        role: "President",
+        age: 45,
+        loft: "Golden Wings Loft",
+        joined: 2016,
+        location: "Mandya, Karnataka",
+        image: "images/giri.jpg",
+        description: "Pigeon enthusiast with 7 years of experience in breeding and racing homing pigeons. Specializes in long-distance racing techniques.",
+        mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3894.8199173465273!2d76.87532707479389!3d12.528086087748004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bafa1d4429ddf4d%3A0xbd3e268909bca8f8!2sTHANU%20LOFT.!5e0!3m2!1sen!2sin!4v1746798802749!5m2!1sen!2sin" 
+           // You can paste iframe code here later
+      },
+      "harshith-gowda": {
+        name: "Harshith Gowda T.S",
+        role: "Secretary",
+        age: 32,
+        loft: "Sky Flyers Loft",
+        joined: 2018,
+        location: "Mysuru, Karnataka",
+        image: "images/harshith.jpg",
+        description: "Organizes all club events and manages race schedules. Coordinates with racing associations of MHPS.",
+        mapEmbed: ""
+      }
+      // Add more members here
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const memberId = params.get("id");
+
+    if (members[memberId]) {
+      const m = members[memberId];
+      document.getElementById("member-card").innerHTML = `
+        <img src="${m.image}" alt="${m.name}" class="member-photo" />
+        <h3 class="mt-3 mb-3">${m.name}</h3>
+        <div class="info-item"><i class="fas fa-user-tie info-icon"></i><span>${m.role}</span></div>
+        <div class="info-item"><i class="fas fa-cake-candles info-icon"></i><span>Age: ${m.age}</span></div>
+        <div class="info-item"><i class="fas fa-dove info-icon"></i><span>Loft Name: ${m.loft}</span></div>
+        <div class="info-item"><i class="fas fa-calendar-check info-icon"></i><span>Joined MHPS in: ${m.joined}</span></div>
+        <div class="info-item"><i class="fas fa-map-marker-alt info-icon"></i><span>Location: ${m.location}</span></div>
+        <div class="description text-start mt-4"><strong>Description:</strong><br>${m.description}</div>
+        <div class="map-embed mt-4">${m.mapEmbed}</div>
+      `;
+    } else {
+      document.getElementById("member-card").innerHTML = `<h4 class="text-danger">Member not found.</h4>`;
+    }
+  </script>
+
+</body>
+</html>
