@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanu Loft - Premium Racing Pigeons</title>
+   <link rel="icon" href="photos/thanuloft.jpg" type="image/jpeg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .pigeon-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .pigeon-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Navigation -->
+<nav class="fixed w-full bg-white shadow-md z-50">
+  <div class="container mx-auto px-6 py-4">
+    <div class="flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-amber-600 flex items-center">
+       <img src="photos/thanuloft.jpg" alt="Thanu Loft Logo" class="w-8 h-8 mr-2 rounded-full">
+        Thanu Loft
+      </a>
+
+      <!-- Desktop Links -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-700 hover:text-amber-500 transition-colors">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-amber-500 transition-colors">About</a>
+        <a href="#pigeons" class="text-gray-700 hover:text-amber-500 transition-colors">Our Pigeons</a>
+        <a href="#results" class="text-gray-700 hover:text-amber-500 transition-colors">Race Results</a>
+        <a href="#contact" class="text-gray-700 hover:text-amber-500 transition-colors">Contact</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+        <i class="fas fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Links -->
+    <div id="mobile-menu" class="md:hidden hidden flex flex-col mt-4 space-y-2">
+      <a href="#home" class="text-gray-700 hover:text-amber-500 transition-colors">Home</a>
+      <a href="#about" class="text-gray-700 hover:text-amber-500 transition-colors">About</a>
+      <a href="#pigeons" class="text-gray-700 hover:text-amber-500 transition-colors">Our Pigeons</a>
+      <a href="#results" class="text-gray-700 hover:text-amber-500 transition-colors">Race Results</a>
+      <a href="#CSontact" class="text-gray-700 hover:text-amber-500 transition-colors">Contact</a>
+    </div>
+  </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 bg-gradient-to-r from-amber-50 to-white">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0 animate-fade">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                    Champion Racing Pigeons <br>
+                    <span class="text-amber-600">From Thanu Loft</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Breeding and racing top-quality homing pigeons with passion and excellence since 2017. 
+                    Our champions are known for their speed, stamina, and intelligence.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#pigeons" class="px-6 py-3 bg-amber-500 text-white rounded-lg font-medium hover:bg-amber-600 transition-colors shadow-lg">
+                        Meet Our Champions
+                    </a>
+                    <a href="#ontact" class="px-6 py-3 border border-amber-500 text-amber-500 rounded-lg font-medium hover:bg-amber-50 transition-colors">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 animate-fade delay-100">
+                <img src="photos/giri.jpg" 
+                     alt="Champion Racing Pigeon" 
+                     class="rounded-xl shadow-2xl border-4 border-white transform rotate-2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center animate-fade delay-200">
+                    <div class="text-4xl font-bold text-amber-600 mb-2">7+</div>
+                    <div class="text-gray-600">Years of Experience</div>
+                </div>
+                <div class="text-center animate-fade delay-300">
+                    <div class="text-4xl font-bold text-amber-600 mb-2">3</div>
+                    <div class="text-gray-600">Championship</div>
+                </div>
+                <div class="text-center animate-fade delay-200">
+                    <div class="text-4xl font-bold text-amber-600 mb-2">4</div>
+                    <div class="text-gray-600">Runner Up</div>
+                </div>
+                <div class="text-center animate-fade delay-300">
+                    <div class="text-4xl font-bold text-amber-600 mb-2">1</div>
+                    <div class="text-gray-600">Karnataka Federation Champions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 animate-fade">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Our <span class="text-amber-500">Thanu Loft</span> Story
+                </h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 animate-fade">
+                    <img src="photos/thanuloft-pic.jpg" 
+                         alt="Thanu Loft Pigeon House" 
+                         class="rounded-xl shadow-lg">
+                </div>
+                <div class="md:w-1/2 animate-fade delay-100">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">From Humble Beginnings to Champion Breeders</h3>
+                    <p class="text-gray-600 mb-6">
+                        Founded in 2017 by Giri Gowda V, Thanu Loft began with just a handful of pigeons in a small backyard loft. 
+                        Today, we operate one of the most respected racing pigeon facilities in the region, known for our selective 
+                        breeding program and commitment to excellence.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        Our pigeons are bred for performance, health, and temperament. We combine traditional breeding techniques with 
+                        modern training methods to produce birds that consistently outperform the competition.
+                    </p>
+                    <div class="flex items-center">
+                        <div class="bg-amber-100 p-4 rounded-full mr-4">
+                            <i class="fas fa-trophy text-amber-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Champion Bloodlines</h4>
+                            <p class="text-gray-600 text-sm">Proven winners from top Indian stock</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow animate-fade delay-200">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-route"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3 text-gray-800">Advanced Training</h4>
+                    <p class="text-gray-600">
+                        Our birds undergo progressive distance training and orientation exercises to develop their homing instincts and stamina.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow animate-fade delay-300">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3 text-gray-800">Optimal Health</h4>
+                    <p class="text-gray-600">
+                        Regular veterinary check-ups, balanced nutrition, and premium supplements ensure our pigeons are always at peak condition.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow animate-fade delay-400">
+                    <div class="text-amber-500 text-4xl mb-4">
+                        <i class="fas fa-dna"></i>
+                    </div>
+                    <h4 class="text-xl font-semibold mb-3 text-gray-800">Selective Breeding</h4>
+                    <p class="text-gray-600">
+                        We meticulously track lineage and performance to pair only the strongest birds with the desired racing characteristics.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Pigeons Section -->
+    <section id="pigeons" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 animate-fade">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Our <span class="text-amber-500">Champion</span> Pigeons
+                </h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    Meet some of our top-performing racing pigeons with impressive race records and bloodlines.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Pigeon 1 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow gallery-item animate-fade delay-200">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="none" 
+                             alt="Narmada" 
+                             class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Narmadha</h3>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                              MHPS-21-1228
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Female | 2 years | Blue 
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">
+                                Long Distance Performer
+                            </span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                09 Race Wins
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-amber-600 font-medium">Best Performance:</p>
+                                <p class="text-sm text-gray-600">1st Place out of 296 Birds in 1085km race in KHPF <br>2022-23</p>
+                            </div>
+                            <button class="text-amber-500 hover:text-amber-600">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pigeon 2 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow gallery-item animate-fade delay-300">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="photos/iiii.jpg" 
+                             alt="Silver Streak" 
+                             class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Simsha</h3>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                                MHPS-21-1331
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Female | 4 years | Checker
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">
+                                All-Weather Performer
+                            </span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                06 Race Wins
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-amber-600 font-medium">Best Performance:</p>
+                                <p class="text-sm text-gray-600"></p>
+                            </div>
+                            <button class="text-amber-500 hover:text-amber-600">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pigeon 3 -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow gallery-item animate-fade delay-400">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1606189311381-625fb57021a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1080&q=80" 
+                             alt="Yamuna" 
+                             class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Yamuna</h3>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-medium px-2.5 py-0.5 rounded">
+                                MHPS-19-326
+                            </span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Female | 6 years | Blue W/F
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">
+                            Consistency Ruler
+                            </span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                                15 Race Wins
+                            </span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-amber-600 font-medium">Best Performance:</p>
+                                <p class="text-sm text-gray-600">Got placements in 2 Years on KHPF under 25 placements</p>
+                            </div>
+                            <button class="text-amber-500 hover:text-amber-600">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 animate-fade">
+                <a href="#" class="inline-flex items-center px-6 py-3 bg-amber-500 text-white rounded-lg font-medium hover:bg-amber-600 transition-colors shadow-md">
+                    View Full Breed Stock
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Race Results Section -->
+    <section id="results" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 animate-fade">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Recent <span class="text-amber-500">Race</span> Results (2024-25)
+                </h2>
+                <div class="w-20 h-1 bg-amber-500 mx-auto"></div>
+                <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+                    Our pigeons consistently perform at the highest levels in national and international competitions.
+                </p>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden animate-fade delay-100">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Race Name</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Distance</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pigeon</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Position</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Velocity (mt/min)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">06 Jan 2025</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Young Birds</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">300 km</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium">KHPF/24/9040</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-green-800">1st</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1168.34</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">12 Jan 2025</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Wodeyar Open Race</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">400 km</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium">KHPF/24/8586</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">1st</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1133.9</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">19 Jan 2025</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Open Bird Derby</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">501 km</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium">KHPF/23/0010</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-green-800">2nd</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1032.28</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">01 Feb 2025</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Open Birds</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">725 km</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium">KHPF/23/0605</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">2nd</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">919.84</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">25 Feb 2025</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Open Birds</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1000 km</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium">MHPS/21/1331</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-green-800">1st</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1060.32</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+       
+        </div>
+    </section>
+
+   
+<section id="Contact" class="py-20 px-6 bg-white">
+  <!-- Top Centered Headline -->
+  <div class="text-center mb-16 animate-fade">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      Contact <span class="text-amber-500">Founder</span> of Thanu Loft
+    </h2>
+    <div class="w-60 h-1 bg-amber-500 mx-auto"></div>
+    <p class="text-gray-600 mt-6 max-w-2xl mx-auto">
+      Clear all your Dought about racing and Breeding Section with the Founder of Thanu Loft - 
+    </p>
+  </div>
+
+  <!-- Form & Contact Info Container -->
+  <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 bg-white p-8 rounded-xl shadow-md animate-fade delay-200">
+    
+    <!-- Left: Contact Form -->
+    <div class="w-full lg:w-2/3">
+      <div class="mb-6">
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+        <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none" placeholder="John Smith" required>
+      </div>
+      <div class="mb-6">
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+        <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none" placeholder="your@email.com" required>
+      </div>
+      <div class="mb-6">
+        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+        <select id="subject" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none">
+          <option>Breeding Stock Inquiry</option>
+          <option>I want some Medicines Tips</option>
+          <option>Young Birds Availability</option>
+          <option>Training Consultation</option>
+          <option>Interested to Buy</option>
+          <option>Other Question</option>
+        </select>
+      </div>
+      <div class="mb-6">
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Your Message</label>
+        <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none" placeholder="Tell us about your inquiry..." required></textarea>
+      </div>
+      <button onclick="sendToWhatsApp()" class="w-full px-6 py-3 bg-amber-500 text-white rounded-lg font-medium hover:bg-amber-600 transition-colors shadow-md">
+        Send Message
+      </button>
+    </div>
+
+    <!-- Right: Contact Info + Map -->
+    <div class="md:w-1/2 animate-fade delay-300">
+      <div class="bg-white p-8 rounded-xl shadow-md mb-8">
+        <h3 class="text-xl font-semibold mb-6 text-gray-800">Contact Information</h3>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div class="bg-amber-100 p-3 rounded-full mr-4">
+              <i class="fas fa-map-marker-alt text-amber-600"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-800">Loft Location</h4>
+              <p class="text-gray-600">#99, 5th Cross<br>Kallahalli, Mandya 571-4017</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="bg-amber-100 p-3 rounded-full mr-4">
+              <i class="fas fa-phone-alt text-amber-600"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-800">Phone</h4>
+              <p class="text-gray-600">+91 9900977914<br>Mon-Fri, 9am-5pm</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="bg-amber-100 p-3 rounded-full mr-4">
+              <i class="fas fa-envelope text-amber-600"></i>
+            </div>
+            <div>
+              <h4 class="font-medium text-gray-800">Email</h4>
+              <p class="text-gray-600">girigowdav9@gmail.com<br>tejasgmandya@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-8 rounded-xl shadow-md">
+        <h3 class="text-xl font-semibold mb-6 text-gray-800">Visit Our Loft</h3>
+        <p class="text-gray-600 mb-4">
+          We welcome serious buyers to visit our facilities by appointment. See our champion bloodlines in person and discuss your specific racing goals with our experts.
+        </p>
+        <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3894.8199171614588!2d76.877902!3d12.528086099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bafa1d4429ddf4d%3A0xbd3e268909bca8f8!2sTHANU%20LOFT.!5e0!3m2!1sen!2sin!4v1748526759843!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+   
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-dove text-amber-500 mr-2 pigeon-icon"></i>
+                        Thanu Loft
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        Breeding champions since 2017. Dedicated to excellence in racing pigeon genetics and performance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-gray-400 hover:text-amber-500 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-amber-500 transition-colors">About Us</a></li>
+                        <li><a href="#pigeons" class="text-gray-400 hover:text-amber-500 transition-colors">Our Pigeons</a></li>
+                        <li><a href="#results" class="text-gray-400 hover:text-amber-500 transition-colors">Race Results</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-amber-500 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-6">Information</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">Breeding Program</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">Training Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">Pigeon Health</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-lg mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to get updates on new stock, racing results, and breeding tips.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" 
+                               class="px-4 py-2 rounded-l-lg text-gray-800 focus:outline-none w-full">
+                        <button class="px-4 py-2 bg-amber-500 text-white rounded-r-lg hover:bg-amber-600 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>© 2023 Thanu Loft. All Rights Reserved. | Designed with <i class="fas fa-heart text-amber-500"></i> for Racing Pigeons</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation trigger on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-fade');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, {threshold: 0.1});
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+         
+    // Simple animation trigger on scroll
+    document.addEventListener('DOMContentLoaded', function () {
+        const animatedElements = document.querySelectorAll('.animate-fade');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        const navLinks = document.createElement('div');
+        navLinks.classList.add('absolute', 'top-full', 'left-0', 'w-full', 'bg-white', 'flex', 'flex-col', 'space-y-4', 'py-4', 'px-6', 'shadow-lg', 'z-40', 'hidden');
+        navLinks.innerHTML = `
+            <a href="#home" class="text-gray-700 hover:text-amber-500 transition-colors">Home</a>
+            <a href="#about" class="text-gray-700 hover:text-amber-500 transition-colors">About</a>
+            <a href="#pigeons" class="text-gray-700 hover:text-amber-500 transition-colors">Our Pigeons</a>
+            <a href="#results" class="text-gray-700 hover:text-amber-500 transition-colors">Race Results</a>
+            <a href="#contact" class="text-gray-700 hover:text-amber-500 transition-colors">Contact</a>
+        `;
+        mobileMenuButton.parentElement.appendChild(navLinks);
+
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+        });
+    });
+
+        });
+      
+  document.addEventListener('DOMContentLoaded', function () {
+    // Fade-in animation on scroll
+    const animatedElements = document.querySelectorAll('.animate-fade');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+        }
+      });
+    }, { threshold: 0.1 });
+    animatedElements.forEach(el => observer.observe(el));
+
+    // Mobile menu toggle
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  });
+
+ 
+  
+  function sendToWhatsApp() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    // Use actual \n for line breaks and encode only once
+    const fullMessage = `Hello, I am ${name}\nEmail: ${email}\n\nSubject: ${subject}\n\nMessage:\n${message}`;
+
+    const phone = "919900977914"; // Founder number
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(fullMessage)}`;
+
+    window.open(url, '_blank');
+  }
+
+
+
+
+    </script>
+</body>
+</html>
