@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="images/mhpslogo.png">
+    <title>Mandya Homing Pigeon Society</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1a73e8;
+            --dark-blue: #0d47a1;
+            --light-blue: #e8f0fe;
+            --accent-blue: #4285f4;
+            --text-dark: #202124;
+            --text-light: #5f6368;
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--off-white);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Header Styles */
+        .header {
+  background: linear-gradient(to right, #0a66ff, #0545a3);
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.site-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #e0e0e0;
+}
+
+        
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .nav-logo {
+            font-weight: 600;
+            color: var(--primary-blue);
+            display: none;
+        }
+        
+        .nav-logo i {
+            margin-right: 0.5rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .nav-link i {
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-blue);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 2rem 0;
+        }
+        
+        section {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-blue);
+        }
+        
+        .section-header i {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        
+        .section-title {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        /* Members Section */
+       .members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 24px;
+}
+
+.member-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.member-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  background-color: #eee;
+}
+
+.member-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.member-card a:hover {
+  text-decoration: none;
+}
+
+.member-card a * {
+  text-decoration: none !important;
+}
+
+
+.member-info {
+  padding: 1.5rem;
+}
+
+.member-name {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+  display: flex;
+  align-items: center;
+}
+
+.member-name i {
+  color: #1e88e5;
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.member-role {
+  color: #1e88e5;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.member-role i {
+  margin-right: 0.5rem;
+}
+
+.member-info p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  .member-photo {
+    height: 250px;
+  }
+}
+
+        
+        /* Race Results */
+        .pdf-list {
+            list-style: none;
+        }
+        
+        .pdf-item {
+            padding: 1.2rem;
+            background-color: var(--light-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+        
+        .pdf-item:hover {
+            background-color: #d2e3fc;
+        }
+        
+        .pdf-icon {
+            color: #d93025;
+            font-size: 2rem;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .pdf-info {
+            flex-grow: 1;
+        }
+        
+        .pdf-name {
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+        }
+        
+        .pdf-meta {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .pdf-meta span {
+            margin-right: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .pdf-meta i {
+            margin-right: 0.3rem;
+            font-size: 0.8rem;
+        }
+        
+        .download-btn {
+            text-decoration: none;
+            background-color: #0a66ff;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .download-btn:hover {
+            background-color: #004ec2;
+            text-decoration: none;
+        }
+
+        .download-btn i {
+            font-size: 14px;
+        }
+        
+                    .achievements-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.season-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.season-card h3 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.achievement-card {
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.achievement-card.champion {
+    border-left-color: #f1c40f; /* Gold border */
+    background: rgba(241, 196, 15, 0.05);
+}
+
+.achievement-card.runner-up {
+    border-left-color: #95a5a6; /* Silver border */
+    background: rgba(149, 165, 166, 0.05);
+}
+
+.achievement-card h4 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.achievement-details p {
+    margin: 0.5rem 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .achievement-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .season-card {
+        padding: 1rem;
+    }
+}
+        
+        /* Location Section */
+        .location-info {
+            margin-bottom: 2rem;
+        }
+        
+        .address {
+            background: var(--light-blue);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .address-item {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .address-item i {
+            color: var(--primary-blue);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+        
+        .map-container {
+            height: 400px;
+            background-color: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Join Section */
+        .join-intro {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, var(--light-blue), #d2e3fc);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-card-header i {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-right: 1rem;
+        }
+        
+        .contact-card-title {
+            font-size: 1.3rem;
+            color: var(--primary-blue);
+            margin: 0;
+        }
+        
+        .contact-info {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            color: var(--primary-blue);
+            margin-right: 1rem;
+            width: 1.2rem;
+            text-align: center;
+        }
+        
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+            margin-top: 1rem;
+        }
+        
+        .action-btn i {
+            margin-right: 0.7rem;
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(26, 115, 232, 0.4);
+            background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+        }
+        
+        /* Footer */
+        footer {
+  background: linear-gradient(135deg, var(--dark-blue), #0b3d91);
+  color: white;
+  padding: 1.5rem 0 1rem;
+  font-size: 0.9rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-column h3 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+.footer-column h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--white);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link {
+  margin-bottom: 0.5rem;
+}
+
+.footer-link a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  line-height: 1.3;
+}
+
+.footer-link a i {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+  min-width: 15px;
+}
+
+.footer-link a:hover {
+  color: white;
+  padding-left: 3px;
+}
+
+.social-links {
+  display: flex;
+  margin-top: 0.8rem;
+  gap: 0.7rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.social-link:hover {
+  background: var(--primary-blue);
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+
+.footer-bottom p {
+  margin: 0.3rem 0;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .footer-column {
+    margin-bottom: 0;
+  }
+  
+  .footer-link {
+    margin-bottom: 0.4rem;
+  }
+}
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-logo {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-item {
+                margin: 0;
+                border-top: 1px solid #eee;
+            }
+            
+            .nav-link {
+                padding: 1rem 0;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .logo i {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            header {
+                padding: 1.5rem 0;
+            }
+            
+            .logo {
+                font-size: 1.8rem;
+                flex-direction: column;
+            }
+            
+            .logo i {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .members-grid,
+            .champions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+          <img src="images/mhpslogo.png" alt="MHPS Logo" class="logo-img" />
+          <h1 class="site-title">Mandya Homing Pigeon Society</h1>
+        </div>
+        <p class="tagline">❝ Preserving the tradition of pigeon racing since 2018 ❞</p>
+      </header>
+      
+    
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span><i class="fas fa-dove"></i> MHPS</span>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#members" class="nav-link">
+                            <i class="fas fa-users"></i> Members
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#races" class="nav-link">
+                            <i class="fas fa-trophy"></i> Race Results
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#champions" class="nav-link">
+                            <i class="fas fa-medal"></i> Champions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#location" class="nav-link">
+                            <i class="fas fa-map-marker-alt"></i> Location
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#join" class="nav-link">
+                            <i class="fas fa-user-plus"></i> Join Us
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container">
+        <section id="home">
+            <div class="section-header">
+                <i class="fas fa-home"></i>
+                <h2 class="section-title">Welcome to MHPS</h2>
+            </div>
+            <div class="section-content">
+                <p><i class="fas fa-paw"></i> Founded in 2018, the Mandya Homing Pigeon Society is dedicated to preserving and promoting the ancient sport of pigeon racing. celebrating the remarkable homing abilities of these incredible birds.</p>
+                <p><i class="fas fa-paw"></i> We organize regular races, training sessions, and educational programs to share our passion with the community and ensure the continuation of this traditional sport for future generations.</p>
+                <div style="margin-top: 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <div style="display: flex; align-items: center; background: var(--light-blue); padding: 0.8rem 1rem; border-radius: 8px;">
+                        <i class="fas fa-calendar-alt" style="color: var(--primary-blue); margin-right: 0.7rem;"></i>
+                        <div>
+                            <div style="font-weight: 500;">Races Held On </div>
+                            <small>Every December to March</small>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; background: var(--light-blue); padding: 0.8rem 1rem; border-radius: 8px;">
+                        <i class="fas fa-flag-checkered" style="color: var(--primary-blue); margin-right: 0.7rem;"></i>
+                        <div>
+                            <div style="font-weight: 500;">Upcoming Race</div>
+                            <small>Club Races - Decembe 2025</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="members">
+            <div class="section-header">
+                <i class="fas fa-users"></i>
+                <h2 class="section-title">Our Members</h2>
+            </div>
+           <!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<div class="members-grid">
+  <div class="member-card">
+  <a href="members/thanuloft.html" style="text-decoration: none; color: inherit;">
+    <img class="member-photo" src="images/giri.jpg" alt="Photo" >
+    <div class="member-info">
+      <div class="member-name"><i class="fas fa-user"></i> Giri Gowda V</div>
+      <div class="member-role"><i class="fas fa-star"></i> President</div>
+      <p>Pigeon enthusiast with 7 years of experience in breeding and racing homing pigeons. Specializes in long-distance racing techniques.</p>
+    </div>
+  </a>
+</div>
+
+<div class="member-card">
+  <a href="members/hdmloft.html">
+    <img class="member-photo" src="images/harshith.jpg" alt="Harshith Gowda T.S">
+    <div class="member-info">
+      <div class="member-name"><i class="fas fa-user-edit"></i> Harshith Gowda T.S</div>
+      <div class="member-role"><i class="fas fa-star"></i> Secretary</div>
+      <p>Organizes all club events and manages race schedules. Coordinates with racing associations of MHPS.</p>
+    </div>
+  </a>
+</div>
+
+<div class="member-card">
+  <a href="members/jaykumar.html">
+    <img class="member-photo" src="images/jaykumar.jpg" alt="Jayakumar">
+    <div class="member-info">
+      <div class="member-name"><i class="fas fa-coins"></i> Jayakumar</div>
+      <div class="member-role"><i class="fas fa-star"></i> Vice-President</div>
+      <p>Manages programs at MHPS. Expert in pigeon nutrition and health.</p>
+    </div>
+  </a>
+</div>
+
+<div class="member-card">
+  <a href="members/mitloft.html">
+    <img class="member-photo" src="images/lethan.jpg" alt="Lethan">
+    <div class="member-info">
+      <div class="member-name"><i class="fas fa-user"></i> Lethan</div>
+      <div class="member-role"><i class="fas fa-star"></i> Race Coordinator</div>
+      <p>Oversees race logistics and timing systems. Implements modern tracking tech for races.</p>
+    </div>
+  </a>
+</div>
+
+<div class="member-card">
+  <a href="members/harish.html">
+    <img class="member-photo" src="images/harish.jpg" alt="Harish Gowda">
+    <div class="member-info">
+      <div class="member-name"><i class="fas fa-user"></i> Harish Gowda</div>
+      <div class="member-role"><i class="fas fa-star"></i> Member</div>
+      <p>Supports race organization and ensures smooth communication within MHPS.</p>
+    </div>
+  </a>
+</div>
+
+<div class="member-card">
+  <a href="none">
+    <img class="member-photo" src="images/default.jpg" alt="Sunil">
+    <div class="member-info">
+      <div class="member-name"><i class="fas fa-user"></i> Sunil</div>
+      <div class="member-role"><i class="fas fa-star"></i> Member</div>
+      <p>Active club member involved in operations and race preparation.</p>
+    </div>
+  </a>
+</div>
+
+<div class="member-card">
+  <a href="members/chethan.html">
+    <img class="member-photo" src="images/chethan.jpg" alt="Chethan">
+    <div class="member-info">
+      <div class="member-name"><i class="fas fa-user"></i> Chethan</div>
+      <div class="member-role"><i class="fas fa-star"></i> Member</div>
+      <p>Handles member coordination and assists in event planning.</p>
+    </div>
+  </a>
+</div>
+
+<div class="member-card">
+  <a href="members/manjesh.html">
+    <img class="member-photo" src="images/manjesh.jpg" alt="Manjesh">
+    <div class="member-info">
+      <div class="member-name"><i class="fas fa-user"></i> Manjesh</div>
+      <div class="member-role"><i class="fas fa-star"></i> Member</div>
+      <p>Provides technical support for race tracking and pigeon care systems.</p>
+    </div>
+  </a>
+</div>
+
+<div class="member-card">
+  <a href="members/keshva.html">
+    <img class="member-photo" src="images/Keshva.jpg" alt="Keshava Murthy">
+    <div class="member-info">
+      <div class="member-name"><i class="fas fa-user"></i> Keshava Murthy</div>
+      <div class="member-role"><i class="fas fa-star"></i> Member</div>
+      <p>Supports race organization and ensures smooth communication within MHPS.</p>
+    </div>
+  </a>
+</div>
+
+
+</section>
+
+        
+        <section id="races">
+            <div class="section-header">
+                <i class="fas fa-trophy"></i>
+                <h2 class="section-title">Race Results (2024-25)</h2>
+            </div>
+            <p style="margin-bottom: 1.5rem;">View PDFs of our recent race results:</p>
+            <ul class="pdf-list">
+                <li class="pdf-item">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <div class="pdf-name">200km Chikkahalli(KA) Race Results</div>
+                        <div class="pdf-meta">
+                            <span><i class="fas fa-calendar-alt"></i>29th December 2024</span>
+                            <span><i class="fas fa-file-alt"></i>2 pages</span>
+                            <span><i class="fa-solid fa-eye"></i>0.8MB</span>
+                        </div>
+                    </div>
+                    <a href="results/200KM.pdf" target="_blank" class="download-btn">
+                        <i class="fa-solid fa-eye"></i>view
+                    </a>
+                </li>
+                <li class="pdf-item">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <div class="pdf-name">300km Guntakal(AP) Race Results </div>
+                        <div class="pdf-meta">
+                            <span><i class="fas fa-calendar-alt"></i>6th January 2025</span>
+                            <span><i class="fas fa-file-alt"></i> 2 pages</span>
+                            <span><i class="fa-solid fa-eye"></i>view</span>
+                        </div>
+                    </div>
+                    <a href="results/300KM.pdf" target="_blank" class="download-btn">
+                        <i class="fa-solid fa-eye"></i>view
+                    </a>
+                </li>
+                <li class="pdf-item">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <div class="pdf-name">400km Raichur(KA) Race Results</div>
+                        <div class="pdf-meta">
+                            <span><i class="fas fa-calendar-alt"></i> 12th January 2025</span>
+                            <span><i class="fas fa-file-alt"></i> 2 pages</span>
+                            <span><i class="fa-solid fa-eye"></i> 1.1MB</span>
+                        </div>
+                    </div>
+                    <a href="results/400KM.pdf" target="_blank" class="download-btn">
+                        <i class="fa-solid fa-eye"></i>view
+                    </a>
+                </li>
+                <li class="pdf-item">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <div class="pdf-name">500km Kosgi(AP) Race Results</div>
+                        <div class="pdf-meta">
+                            <span><i class="fas fa-calendar-alt"></i>19th January 2025</span>
+                            <span><i class="fas fa-file-alt"></i> 2 pages</span>
+                            <span><i class="fa-solid fa-eye"></i> 0.8MB</span>
+                        </div>
+                    </div>
+                    <a href="results/500KM.pdf" target="_blank" class="download-btn">
+                        <i class="fa-solid fa-eye"></i>view
+                    </a>
+                </li>
+                <li class="pdf-item">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <div class="pdf-name">725km Nizamabad(TL) Race Results</div>
+                        <div class="pdf-meta">
+                            <span><i class="fas fa-calendar-alt"></i>1st February 2025</span>
+                            <span><i class="fas fa-file-alt"></i> 2 pages</span>
+                            <span><i class="fa-solid fa-eye"></i> 1MB</span>
+                        </div>
+                    </div>
+                    <a href="results/725KM.pdf" target="_blank" class="download-btn">
+                        <i class="fa-solid fa-eye"></i>view
+                    </a>
+                </li>
+                <li class="pdf-item">
+                    <div class="pdf-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="pdf-info">
+                        <div class="pdf-name">1000km Warud(MH) Race Results</div>
+                        <div class="pdf-meta">
+                            <span><i class="fas fa-calendar-alt"></i>25th February 2025</span>
+                            <span><i class="fas fa-file-alt"></i> 2 pages</span>
+                            <span><i class="fa-solid fa-eye"></i> 1.5MB</span>
+                        </div>
+                    </div>
+                    <a href="results/1000KM.pdf" target="_blank" class="download-btn">
+                        <i class="fa-solid fa-eye"></i>view
+                    </a>
+                </li>
+            </ul>
+        </section>
+        
+        <section id="champions">
+            <div class="section-header">
+                <i class="fas fa-medal"></i>
+                <h2 class="section-title">Our Champions</h2>
+            </div>
+           <div class="achievements-container">
+            <div class="season-card">
+        <h3>2024-25 Season</h3>
+        <div class="achievement-grid">
+            <!-- Champion -->
+            <div class="achievement-card champion">
+                <h4>🏆 Club Champion</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Giri Gowda V</p>
+                    <p><strong>Loft Name:</strong> Thanu Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                    <p><strong>Total Gained Points:</strong> 526</p>
+                </div>
+            </div>
+            <!-- Runner-up -->
+            <div class="achievement-card runner-up">
+                <h4>🥈 Runner-up</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Harshith Gowda T S</p>
+                    <p><strong>Loft Name:</strong> HDM Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                    <p><strong>Total Gained Points:</strong> 418</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="season-card">
+        <h3>2023-24 Season</h3>
+        <div class="achievement-grid">
+            <!-- Champion -->
+            <div class="achievement-card champion">
+                <h4>🏆 Club Champion</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Giri Gowda V</p>
+                    <p><strong>Loft Name:</strong> Thanu Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                    <p><strong>Total Gained Points:</strong> 353</p>
+                </div>
+            </div>
+            <div class="achievement-card champion">
+                <h4>🏆 Club Champion</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Harish Gowda</p>
+                    <p><strong>Loft Name:</strong> Harish Loft</p>
+                    <p><strong>Member Since:</strong> 2020</p>
+                    <p><strong>Total Gained Points:</strong> 353</p>
+                </div>
+            </div>
+            <!-- Runner-up -->
+            <div class="achievement-card runner-up">
+                <h4>🥈 Runner-up</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Lethan M N</p>
+                    <p><strong>Loft Name:</strong> MIT Loft</p>
+                    <p><strong>Member Since:</strong> 2019</p>
+                    <p><strong>Total Gained Points:</strong> 268</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="season-card">
+        <h3>2022-23 Season</h3>
+        <div class="achievement-grid">
+            <!-- Champion -->
+            <div class="achievement-card champion">
+                <h4>🏆 Club Champion</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Lethan M N</p>
+                    <p><strong>Loft Name:</strong> MIT Loft</p>
+                    <p><strong>Member Since:</strong> 2019</p>
+                    <p><strong>Total Gained Points:</strong> 452</p>
+                </div>
+            </div>
+            <!-- Runner-up -->
+            <div class="achievement-card runner-up">
+                <h4>🥈 Runner-up</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Giri Gowda V</p>
+                    <p><strong>Loft Name:</strong> Thanu Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                    <p><strong>Total Gained Points:</strong> 377</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="season-card">
+        <h3>2021-22 Season</h3>
+        <div class="achievement-grid">
+            <!-- Champion -->
+            <div class="achievement-card champion">
+                <h4>🏆 Club Champion</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Lethan M N</p>
+                    <p><strong>Loft Name:</strong> MIT Loft</p>
+                    <p><strong>Member Since:</strong> 2019</p>
+                    <p><strong>Total Gained Points:</strong> 440</p>
+                </div>
+            </div>
+            <!-- Runner-up -->
+            <div class="achievement-card runner-up">
+                <h4>🥈 Runner-up</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Giri Gowda V</p>
+                    <p><strong>Loft Name:</strong> Thanu Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                    <p><strong>Total Gained Points:</strong> 292</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 2020-21 Season -->
+    <div class="season-card">
+        <h3>2020-21 Season</h3>
+        <div class="achievement-grid">
+            <!-- Champion -->
+            <div class="achievement-card champion">
+                <h4>🏆 Club Champion</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Lethan M N</p>
+                    <p><strong>Loft Name:</strong> MIT Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                    <p><strong>Total Gained Points:</strong> 720</p>
+                </div>
+            </div>
+            <!-- Runner-up -->
+            <div class="achievement-card runner-up">
+                <h4>🥈 Runner-up</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Giri Gowda V</p>
+                    <p><strong>Loft Name:</strong> Thanu Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                    <p><strong>Total Gained Points:</strong> 126</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2019-20 Season -->
+    <div class="season-card">
+        <h3>2019-20 Season</h3>
+        <div class="achievement-grid">
+            <!-- Champion -->
+            <div class="achievement-card champion">
+                <h4>🏆 Club Champion</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Giri Gowda V</p>
+                    <p><strong>Loft Name:</strong> Thanu Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                    <p><strong>Total Gained Points:</strong> 343</p>
+                </div>
+            </div>
+            <!-- Runner-up -->
+            <div class="achievement-card runner-up">
+                <h4>🥈 Runner-up</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Shashi Gowda</p>
+                    <p><strong>Loft Name:</strong> S4 Gowda Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                    <p><strong>Total Gained Points:</strong> 204</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2018-19 Season -->
+    <div class="season-card">
+        <h3>2018-19 Season</h3>
+        <div class="achievement-grid">
+            <!-- Champion -->
+            <div class="achievement-card champion">
+                <h4>🏆 Club Champion</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Shashi Gowda</p>
+                    <p><strong>Loft Name:</strong> S4 Gowda Loft</p>
+                    <p><strong>Member Since:</strong> 2018</p>
+                </div>
+            </div>
+            <!-- Runner-up -->
+            <div class="achievement-card runner-up">
+                <h4>🥈 Runner-up</h4>
+                <div class="achievement-details">
+                    <p><strong>Owner:</strong> Giri Gowda V</p>
+                    <p><strong>Loft Name:</strong> Thanu Loft</p>
+                    <p><strong>Member Since:</strong>2018</p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </section>
+        
+        
+        <section id="location">
+            <div class="section-header">
+                <i class="fas fa-map-marker-alt"></i>
+                <h2 class="section-title">Our Location</h2>
+            </div>
+            <div class="location-info">
+                <p>The Mandya Homing Pigeon Society is located in the heart of Mandya city, with easy access to training grounds and release points for our races.</p>
+                
+                <div class="address">
+                    <div class="address-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div>
+                            <strong>Address:</strong><br>
+                            #99 5th Cross kallahalli<br>
+                            Mandya, Karnataka 571401
+                        </div>
+                    </div>
+                    <div class="address-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Meeting Times:</strong><br>
+                            Every Sunday at 10:00 AM<br>
+                            Holiday : Monday to Satuarday
+                        </div>
+                    </div>
+                    <div class="address-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <strong>Contact:</strong><br>
+                            +91 99009 77914 (President)<br>
+                            +91 99168 24680 (Secretary)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3894.8199171614588!2d76.877902!3d12.528086099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bafa1d4429ddf4d%3A0xbd3e268909bca8f8!2z4LKk4LKo4LOBIOCysuCyvuCyq-CzjeCyn-CzjS4g4LK54LOL4LKu4LKw4LONIOCyquCyvuCysOCyv-CyteCyvuCysw!5e0!3m2!1skn!2sin!4v1746719225118!5m2!1skn!2sin" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+<section id="join">
+    <div class="section-header">
+        <i class="fas fa-user-plus"></i>
+        <h2 class="section-title">Join Our Club</h2>
+    </div>
+    <div class="join-intro">
+        <p><i class="fas fa-dove"></i> Interested in joining the Mandya Homing Pigeon Society? We welcome new members of all experience levels. Whether you're a seasoned pigeon racer or just curious about this fascinating sport, we'd love to hear from you!</p>
+        <p><i class="fas fa-dove"></i> Membership benefits include access to training sessions, breeding advice, participation in races, and our vibrant community of pigeon enthusiasts.</p>
+    </div>
+    
+    <div class="contact-cards">
+        <div class="contact-card">
+            <div class="contact-card-header">
+                <i class="fas fa-user-tie"></i>
+                <h3 class="contact-card-title">Contact Our President</h3>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-user"></i>
+                <span>Giri Gowda V</span>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <span>+91 99009 77914</span>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <span>girigowdav9@gmail.com</span>
+            </div>
+            <a href="tel:+919900977914" class="action-btn">
+                <i class="fas fa-phone-alt"></i> Call Now
+            </a>
+        </div>
+        
+        <div class="contact-card">
+            <div class="contact-card-header">
+                <i class="fas fa-user-edit"></i>
+                <h3 class="contact-card-title">Contact Our Secretary</h3>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-user"></i>
+                <span>Harshith Gowda T S </span>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-phone"></i>
+                <span>+91 99168 24680</span>
+            </div>
+            <div class="contact-info">
+                <i class="fas fa-envelope"></i>
+                <span>harshithkumarts02@gmail.com</span>
+            </div>
+            <a href="mailto:harshithkumarts02@gmail.com" class="action-btn">
+                <i class="fas fa-envelope"></i> Email Now
+            </a>
+        </div>
+    </div>
+    
+    <div style="background: var(--light-blue); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+        <h3 style="color: var(--primary-blue); margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center;">
+            <i class="fas fa-info-circle" style="margin-right: 0.7rem;"></i>
+            Membership Requirements
+        </h3>
+        <ul style="list-style-type: none; padding-left: 1.5rem;">
+            <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start;">
+                <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 0.7rem; margin-top: 0.2rem;"></i>
+                Minimum age: 18 years (junior members 12-17 with guardian)
+            </li>
+            <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start;">
+                <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 0.7rem; margin-top: 0.2rem;"></i>
+                Your Loft must be in 30km radius of Mandya City.(Air Distance)
+            <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start;">
+                <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 0.7rem; margin-top: 0.2rem;"></i>
+                Basic knowledge of pigeon care
+            </li>
+            <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start;">
+                <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 0.7rem; margin-top: 0.2rem;"></i>
+                Commitment to ethical treatment of birds
+            </li>
+            <li style="display: flex; align-items: flex-start;">
+                <i class="fas fa-check-circle" style="color: var(--primary-blue); margin-right: 0.7rem; margin-top: 0.2rem;"></i>
+                Life-Time Membership Fee: ₹2000 
+            </li>
+        </ul>
+    </div>
+    
+    <a href="#location" class="action-btn" style="margin-top: 2rem; display: inline-flex;">
+        <i class="fas fa-map-marker-alt"></i> Visit Our Next Meeting
+    </a>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <!-- Column 1 -->
+      <div class="footer-column">
+        <h3>About MHPS</h3>
+        <ul class="footer-links">
+          <li class="footer-link">
+            <a href="clubInfo.html">
+              <i class="fas fa-chevron-right"></i>
+              Club Info
+            </a>
+          </li>
+          <li class="footer-link">
+            <a href="MembersDetails.html">
+              <i class="fas fa-chevron-right"></i>
+              Members Details
+            </a>
+          </li>
+          <li class="footer-link">
+            <a href="#">
+              <i class="fas fa-chevron-right"></i>
+              Club Achievements
+            </a>
+          </li>
+          <li class="footer-link">
+            <a href="#">
+              <i class="fas fa-chevron-right"></i>
+              Gallery
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Column 2 -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li class="footer-link">
+            <a href="#members">
+              <i class="fas fa-chevron-right"></i>
+              Members
+            </a>
+          </li>
+          <li class="footer-link">
+            <a href="#races">
+              <i class="fas fa-chevron-right"></i>
+              Race Results
+            </a>
+          </li>
+          <li class="footer-link">
+            <a href="#champions">
+              <i class="fas fa-chevron-right"></i>
+              Champions
+            </a>
+          </li>
+          <li class="footer-link">
+            <a href="#join">
+              <i class="fas fa-chevron-right"></i>
+              Join Us
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Column 3 -->
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <ul class="footer-links">
+          <li class="footer-link">
+            <a href="#location">
+              <i class="fas fa-map-marker-alt"></i>
+              #99 5th Cross Kallahalli
+            </a>
+          </li>
+          <li class="footer-link">
+            <a href="tel:+919900977914">
+              <i class="fas fa-phone-alt"></i>
+              +91 99009 77914
+            </a>
+          </li>
+          <li class="footer-link">
+            <a href="mailto:info@mandyapigeons.org">
+              <i class="fas fa-envelope"></i>
+              info@mandyapigeons.org
+            </a>
+          </li>
+        </ul>
+        <div class="social-links">
+          <a href="https://www.facebook.com/groups/509771989396841/" class="social-link">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2018 Mandya Homing Pigeon Society. All Rights Reserved.</p>
+      <p>Designed with <i class="fas fa-heart"></i> for pigeon enthusiasts</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navMenu = document.getElementById('navMenu');
+
+mobileMenuBtn.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    
+    // Change icon
+    const icon = mobileMenuBtn.querySelector('i');
+    if (navMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (this.getAttribute('href') === '#') return;
+        
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+            
+            // Close mobile menu if open
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+    });
+});
+</script>
